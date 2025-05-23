@@ -9,8 +9,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableScheduling
 public class BackendportfolioApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(BackendportfolioApplication.class, args);
+        System.out.print("aws");
+        SpringApplication.run(BackendportfolioApplication.class, args
+        );
     }
 
 }
