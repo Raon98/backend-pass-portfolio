@@ -11,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class BackendportfolioApplication {
 
     public static void main(String[] args) {
-        System.out.print("aws1");
+        System.out.print("aws");
         SpringApplication.run(BackendportfolioApplication.class, args
         );
     }
