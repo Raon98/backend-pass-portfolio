@@ -25,21 +25,22 @@ public class AlgorithmTestController {
         long startTime;
 
         // 잘못된 문자열 연결 방식 (String concatenation)
-        startTime = System.currentTimeMillis();
-        String badResult = "";
-        for (int i = 0; i < iterations; i++) {
-            badResult += "test" + i;  // 매우 비효율적인 방식
-        }
-        result.put("badStringConcatTime", System.currentTimeMillis() - startTime);
-
-        // TODO: 부하테스트 - 실습에서 주석 풀고 위의 코드 주석시키기
-//        // 올바른 문자열 연결 방식 (StringBuilder)
 //        startTime = System.currentTimeMillis();
-//        StringBuilder goodResult = new StringBuilder();
+//        String badResult = "";
 //        for (int i = 0; i < iterations; i++) {
-//            goodResult.append("test").append(i);
+//            badResult += "test" + i;  // 매우 비효율적인 방식
 //        }
-//        result.put("goodStringConcatTime", System.currentTimeMillis() - startTime);
+//        result.put("badStringConcatTime", System.currentTimeMillis() - startTime);
+
+        // VUSER 10명을 대상으로 테스트 결과 4.4TPS -> 10TPS로 개선
+        // TODO: 부하테스트 - 실습에서 주석 풀고 위의 코드 주석시키기
+        // 올바른 문자열 연결 방식 (StringBuilder)
+        startTime = System.currentTimeMillis();
+        StringBuilder goodResult = new StringBuilder();
+        for (int i = 0; i < iterations; i++) {
+            goodResult.append("test").append(i);
+        }
+        result.put("goodStringConcatTime", System.currentTimeMillis() - startTime);
 
         return result;
     }
